@@ -1,1 +1,3 @@
-# Data-Science-Analytics-in-Python-Workshop-UoM-CS-Dept
+# Python-Workshop-UoM-CS-Dept
+
+http://www.cs.memphis.edu/~vphan/
