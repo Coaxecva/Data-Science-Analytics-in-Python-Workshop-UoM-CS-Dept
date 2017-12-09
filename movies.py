@@ -36,4 +36,12 @@ by_titles_count = by_titles[['rating']].count().sort_values(by='rating', ascendi
 by_titles_mean = by_titles.mean()
 by_titles_count[by_titles_mean.rating < 2.0].sort_values(by='rating', ascending=False).head(10)
 
+# pop10 = data.title.value_counts().head(10)
+# for i in range(10):
+# 	print(i, pop10.index[i])
+
+# What are the most-liked movies?
+# We need to *group* same movies into groups and *average* ratings.
+by_titles_mean = by_titles[['rating']].mean().sort_values(by='rating', ascending=False)
+
 gender[(gender['diff'] < 0.01) & (gender['diff'] > -0.01) & (by_titles_mean.rating > 4.0)].head(10)
