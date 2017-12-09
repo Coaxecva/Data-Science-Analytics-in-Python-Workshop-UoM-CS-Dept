@@ -35,3 +35,5 @@ by_titles_count = by_titles[['rating']].count().sort_values(by='rating', ascendi
 
 by_titles_mean = by_titles.mean()
 by_titles_count[by_titles_mean.rating < 2.0].sort_values(by='rating', ascending=False).head(10)
+
+gender[(gender['diff'] < 0.01) & (gender['diff'] > -0.01) & (by_titles_mean.rating > 4.0)].head(10)
