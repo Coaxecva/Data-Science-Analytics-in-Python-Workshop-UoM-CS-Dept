@@ -34,3 +34,4 @@ by_titles = data.groupby('title')
 by_titles_count = by_titles[['rating']].count().sort_values(by='rating', ascending=False)
 
 by_titles_mean = by_titles.mean()
+by_titles_count[by_titles_mean.rating < 2.0].sort_values(by='rating', ascending=False).head(10)
