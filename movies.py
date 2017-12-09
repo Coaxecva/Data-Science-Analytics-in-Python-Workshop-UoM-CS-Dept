@@ -28,4 +28,9 @@ by_titles = data.groupby('title')
 by_titles_count = by_titles.count()
 sorted = by_titles_count.sort_values(by='rating', ascending=False)
 
+# What are the most popular movies?
+# We need to *group* same movies into groups and *count* them
+by_titles = data.groupby('title')
+by_titles_count = by_titles[['rating']].count().sort_values(by='rating', ascending=False)
+
 by_titles_mean = by_titles.mean()
