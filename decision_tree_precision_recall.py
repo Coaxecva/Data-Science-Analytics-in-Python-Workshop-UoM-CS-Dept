@@ -41,3 +41,13 @@ scores = dt.score(X_test, y_test)
 # Validate
 validate(dt, X,  y)
 
+# Make sense out of the decision model
+dt = DecisionTreeClassifier()
+dt.fit(X,y)
+dt.predict([ [5.5,3.6,1.3,0.25] , [5.55,3.33,4.0,1.5], [6.34,3.1,5.6,1.9]  ])
+
+# Visualize tree
+
+draw_tree.visualize_tree(dt, X.columns, 'output')
+# Use this command for Windows cmd
+# dot -Tpng -o dt.png output.dot 
