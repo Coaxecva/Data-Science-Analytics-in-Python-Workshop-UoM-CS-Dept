@@ -4,6 +4,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from skelearn import svm
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
 
 #------------------------------------------------------
 def validate(model, X, y):
