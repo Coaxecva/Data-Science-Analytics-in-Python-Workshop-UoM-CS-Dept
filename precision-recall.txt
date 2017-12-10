@@ -1,0 +1,19 @@
+Precision = TP / (TP + FP)
+Recall = TP / (TP + FN)
+
+Example: 
+120 data points: 60 are Positives (spams). 60 are Negative (no spams).
+
+model predicts correctly 30 Positives
+
+TP = 30
+
+                      Positives               Negatives
+Predicted Positives     TP (30)                 FP (30)
+
+Predicted Negatives     FP (30)                 TN (30)
+                         
+                         60                       60
+           
+           Precision = 30 / 50
+           Recall = 30 / 60
