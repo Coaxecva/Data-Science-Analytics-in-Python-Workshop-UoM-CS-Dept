@@ -46,3 +46,14 @@ model = LinearRegression()
 # 5. Cross validate (define this into a separate function)
 evaluate(model, Xincome, y)
 evaluate(model, Xall, y)
+
+
+model = LinearRegression()
+# fit and predict
+# model.fit(Xincome,y)
+# print( model.predict([ [5], [2] ]))
+
+model.fit(Xall, y)
+
+# 6. Save model
+joblib.dump(model, 'CAhouses.model')
