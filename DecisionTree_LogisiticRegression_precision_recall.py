@@ -51,3 +51,21 @@ dt.predict([ [5.5,3.6,1.3,0.25] , [5.55,3.33,4.0,1.5], [6.34,3.1,5.6,1.9]  ])
 draw_tree.visualize_tree(dt, X.columns, 'output')
 # Use this command for Windows cmd
 # dot -Tpng -o dt.png output.dot 
+
+# Logistic Regression
+logit = LogisticRegression()
+validate(logit, X, y)
+logit.fit(X, y)
+
+
+logit.predict([ [5.5,3.6,1.3,0.25] , [5.55,3.33,4.0,1.5], [6.34,3.1,5.6,1.9]  ])
+
+# Explore logistic regpression
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
+logit.fit(X_train, y_train)
+y_pred = logit.predict(X_test)
+pre_probs = logit.predict_proba(X_test)
+
+for i in range(len(y_pred)):
+	print(X_test.values[i], pre_probs[i], y_pred[i])
+
