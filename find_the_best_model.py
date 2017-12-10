@@ -31,6 +31,21 @@ df = data.drop('median_income', axis=1)
 y = df.median_house_value
 X = df.drop('median_house_value', axis=1)
 
+subdiv1 = [-122.23, 37.88, 20, 900, 150, 500, 150, 4.5, 0, 0, 0, 1, 0]
+subdiv2 = [-123.23, 37.88, 20, 900, 150, 500, 150, 3.5, 0, 0, 0, 1, 0]
+subdiv3 = [-123.23, 37.88, 20, 900, 150, 500, 150, 3.5, 0, 1, 0, 0, 0]
+
+# 5. Evaluate models
+models = [
+	LinearRegression(),
+	Ridge(),
+	ElasticNet(),
+	# SGDRegressor(),
+	GradientBoostingRegressor(),
+]
+
+for model in models:
+	evaluate(model, X, y)
 
 from sklearn.externals import joblib
 # Learn
