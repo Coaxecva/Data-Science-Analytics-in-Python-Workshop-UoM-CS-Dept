@@ -30,3 +30,15 @@ df = data.drop('median_income', axis=1)
 # 4. Get features and y
 y = df.median_house_value
 X = df.drop('median_house_value', axis=1)
+
+
+from sklearn.externals import joblib
+# Learn
+model = GradientBoostingRegressor()
+model.fit(X,y)
+# Save
+joblib.dump(model, 'CAhouses_gbr.model')
+# Load
+model = joblib.load('CAhouses_gbr.model')
+# Predict
+model.predict([subdiv1, subdiv2, subdiv3, subdiv4])
